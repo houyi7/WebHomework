@@ -20,14 +20,7 @@ public class OrderController extends BaseController{
     @Autowired
     private IOrderService orderService;
 
-    /**
-     * Description : 处理用户创建order订单的请求
-     * @date 2022/7/18
-     * @param aid 用户选中的地址aid
-     * @param totalPrice 商品的总金额
-     * @param session 项目启动自动生成的session对象
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/createOrder")
     public JsonResult<Order> createOrder(Integer aid,Long totalPrice,HttpSession session){
         //从session中取出用户名和uid
@@ -40,16 +33,7 @@ public class OrderController extends BaseController{
         return new JsonResult<>(OK,order);
     }
 
-    /**
-     * Description : 处理创建具体orderItem订单的请求
-     * @date 2022/7/19
-     * @param oid 已创建订单的oid
-     * @param cid 每个商品的cod
-     * @param pid 从商品界面直接购买生成订单的商品pid
-     * @param num 商品的总数量
-     * @param session 项目启动自动生成的session对象
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/createOrderItem")
     public JsonResult<Void> createOrderItem(Integer oid,Integer cid,Integer pid,Integer num,HttpSession session){
         //从session中取出用户名
@@ -66,12 +50,7 @@ public class OrderController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理根据订单oid查询order信息的请求
-     * @date 2022/7/20
-     * @param oid 订单oid
-     * @return top.year21.computerstore.utils.JsonResult<top.year21.computerstore.entity.Order>
-     **/
+
     @GetMapping("/queryOrder")
     public JsonResult<Order> queryOrderByOid(Integer oid){
         Order order = orderService.queryOrderByOid(oid);

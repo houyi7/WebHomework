@@ -47,13 +47,7 @@ public class FileController extends BaseController{
         FILE_TYPE.add("image/gif");
     }
 
-    /**
-     * Description : 处理文件的上传
-     * @date 2022/7/24
-     * @param file 文件名
-     * @param session 自动生成的session对象
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping
     public JsonResult<Void> userAvatarUpload(MultipartFile file,
                                              HttpSession session){
@@ -128,12 +122,7 @@ public class FileController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理文件的下载
-     * @date 2022/7/12
-     * @param fileName 下载的文件名
-     * @return org.springframework.http.ResponseEntity<byte[]>
-     **/
+
     @GetMapping("/down/{name}")
     public ResponseEntity<byte[]> fileUpload(@PathVariable("name") String fileName) throws IOException {
         //读取文件

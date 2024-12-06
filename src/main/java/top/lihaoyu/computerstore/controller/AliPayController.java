@@ -79,13 +79,7 @@ public class AliPayController {
         return result;
     }
 
-    /**
-     * Description : 处理异步回调的方法
-     * @date 2022/7/25
-     * @param request  请求对象
-     * @param response 响应对象
-     * @return void
-     **/
+
     @PostMapping("/notifyNotice")
     @ResponseBody
     public void alipayNotifyNotice(HttpServletRequest request, HttpServletRequest response) throws Exception {
@@ -173,13 +167,7 @@ public class AliPayController {
 //        return "success";
     }
 
-    /**
-     * Description : 同步回调方法
-     * @date 2022/7/25
-     * @param request 请求对象
-     * @param response 响应对象
-     * @return void
-     **/
+
     @GetMapping("/returnNotice")
     public void alipayReturnNotice(HttpServletRequest request, HttpServletResponse response) throws Exception {
 

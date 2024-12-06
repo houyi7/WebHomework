@@ -21,13 +21,7 @@ public class AddressController extends BaseController{
     @Autowired
     private IAddressService addressService;
 
-    /**
-     * Description : 处理用户新增地址
-     * @date 2022/7/13
-     * @param address 用户地址信息
-     * @param session 项目启动自动生成的HttpSession对象
-     * @return void
-     **/
+
     @PostMapping
     public JsonResult<Void> addAddress(Address address,HttpSession session){
 
@@ -40,12 +34,7 @@ public class AddressController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理用户查询收货地址
-     * @date 2022/7/13
-     * @param session 项目启动生成的session
-     * @return void
-     **/
+
     @GetMapping
     public JsonResult<List<Address>> queryAllAddress(HttpSession session){
         //获取uid
@@ -69,13 +58,7 @@ public class AddressController extends BaseController{
         return new JsonResult<>(OK,list);
     }
 
-    /**
-     * Description : 处理设置默认地址的请求
-     * @date 2022/7/15
-     * @param aid 地址aid
-     * @param session 项目启动生成的session
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/setAddress")
     public JsonResult<Void> setUserDefaultAddress(Integer aid,HttpSession session){
         //查询要修改的地址是否存在
@@ -103,13 +86,7 @@ public class AddressController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理删除某个地址的请求
-     * @date 2022/7/15
-     * @param aid 地址aid
-     * @param session 项目启动生成的session
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/deleteAddress")
     public JsonResult<Void> deleteAddress(Integer aid,HttpSession session){
         //从session中取出用户的名字
@@ -123,12 +100,7 @@ public class AddressController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理查询某个指定aid地址的请求
-     * @date 2022/7/15
-     * @param aid 地址aid
-     * @return top.year21.computerstore.utils.JsonResult<top.year21.computerstore.entity.Address>
-     **/
+
     @GetMapping("/queryOneAddress")
     public JsonResult<Address> queryOneAddress(Integer aid){
         Address address = addressService.queryAddressByAid(aid);
@@ -142,13 +114,7 @@ public class AddressController extends BaseController{
         return new JsonResult<>(OK,address);
     }
 
-    /**
-     * Description : 处理指定地址更新的请求
-     * @date 2022/7/15
-     * @param address 实体类对象
-     * @param session 项目启动生成的session
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/updateAddress")
     public JsonResult<Void> updateOneAddress(Address address,HttpSession session){
 

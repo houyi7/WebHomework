@@ -44,12 +44,7 @@ public class CartController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理查询用户购物车信息的请求
-     * @date 2022/7/17
-     * @param session 项目启动时自动生成的session对象
-     * @return top.year21.computerstore.utils.JsonResult<java.util.List<top.year21.computerstore.entity.Cart>>
-     **/
+
     @GetMapping("/showCarts")
     public JsonResult<List<CartVo>> showCarts(HttpSession session){
         Integer uid = getUserIdFromSession(session);
@@ -58,14 +53,7 @@ public class CartController extends BaseController{
         return new JsonResult<>(OK,carts);
     }
 
-    /**
-     * Description : 处理更新购物车数量信息的请求
-     * @date 2022/7/18
-     * @param num 更新的数量
-     * @param cid cart的cid信息
-     * @param session 项目启动时自动生成的session对象
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/updateCart")
     public JsonResult<Void> updateCateByCid(Integer num,Integer cid,HttpSession session){
         String modifiedUser = getUsernameFromSession(session);
@@ -74,12 +62,7 @@ public class CartController extends BaseController{
         return new JsonResult<>(OK);
     }
 
-    /**
-     * Description : 处理cids数组的内容查询cart信息的请求
-     * @date 2022/7/18
-     * @param cids 查询的cids数组
-     * @return top.year21.computerstore.utils.JsonResult<java.util.List<top.year21.computerstore.entity.Cart>>
-     **/
+
     @GetMapping("/queryCids")
     public JsonResult<List<CartVo>> queryCids(Integer[] cids){
         List<CartVo> list = cartService.queryCartByCids(cids);
@@ -90,12 +73,7 @@ public class CartController extends BaseController{
         return new JsonResult<>(OK,list);
     }
 
-    /**
-     * Description : 处理根据cids内的指定cid删除cart的请求
-     * @date 2022/7/19
-     * @param cids 存储要被删除的cart的cid
-     * @return top.year21.computerstore.utils.JsonResult<java.lang.Void>
-     **/
+
     @PostMapping("/deleteCart")
     public JsonResult<Void> deleteCartByCid(Integer[] cids){
         //遍历执行删除操作
