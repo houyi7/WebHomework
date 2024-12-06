@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.year21.computerstore.mapper.FavoritesMapper">
+<mapper namespace="top.lihaoyu.computerstore.mapper.FavoritesMapper">
 <!--   自定义结果集映射规则 同样字段可以不做设置-->
     <resultMap id="queryFavorites" type="favorites">
         <id column="fid" property="fid"/>

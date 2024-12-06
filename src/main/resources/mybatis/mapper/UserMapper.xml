@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.year21.computerstore.mapper.UserMapper">
+<mapper namespace="top.lihaoyu.computerstore.mapper.UserMapper">
     <!-- int addUser(@Param("user") User user); -->
     <insert id="addUser" >
         insert into t_user(

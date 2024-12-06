@@ -4,7 +4,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/computer_store?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     username: root
-    password: root
+    password: "@Saber214"
   #文件上传的相关设置
   servlet:
     multipart:
@@ -14,7 +14,7 @@ spring:
 
 #配置mybatis配置
 mybatis:
-  type-aliases-package: top.year21.computerstore.entity
+  type-aliases-package: top.lihaoyu.computerstore.entity
   mapper-locations: classpath:mybatis/mapper/*.xml
   configuration:
     #开启在mybatis处理过程中打印出对应的sql语句功能
@@ -31,12 +31,12 @@ pagehelper:
 
 server:
   #本地项目的写法
-  port: 8080
-  ip: 127.0.0.1
-#  部署服务器的写法
-#  ip: 服务器ip地址
 #  port: 8080
-#  filePath: /home/files/computer/
+#  ip: 127.0.0.1
+#  部署服务器的写法
+  ip: 8.138.188.74
+  port: 8080
+  filePath: /home/files/computer/
 
 
 

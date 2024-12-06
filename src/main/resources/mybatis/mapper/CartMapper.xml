@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="top.year21.computerstore.mapper.CartMapper">
+<mapper namespace="top.lihaoyu.computerstore.mapper.CartMapper">
 <!--  自定义映射规则  -->
     <resultMap id="queryCart" type="cart">
         <id property="cid" column="cid"/>
@@ -37,7 +37,7 @@
     </insert>
 
 <!--    List<Cart> queryAllCartsByUid(Integer uid);-->
-    <select id="queryAllCartsByUid" resultType="top.year21.computerstore.vo.CartVo">
+    <select id="queryAllCartsByUid" resultType="top.lihaoyu.computerstore.vo.CartVo">
         SELECT c.cid,c.pid,c.`uid`,c.price,c.num,p.title,p.image,p.`price` AS real_price
                                                 FROM t_cart c LEFT JOIN t_product p
                                                 ON c.pid = p.`id`
@@ -57,7 +57,7 @@
     </update>
 
 <!--    CartVo queryCartVoByCid(Integer cid);-->
-    <select id="queryCartVoByCid" resultType="top.year21.computerstore.vo.CartVo">
+    <select id="queryCartVoByCid" resultType="top.lihaoyu.computerstore.vo.CartVo">
         SELECT c.cid,c.pid,c.`uid`,c.price,c.num,p.title,p.image,p.`price` AS real_price
                                                 FROM t_cart c LEFT JOIN t_product p
                                                 ON c.pid = p.`id`

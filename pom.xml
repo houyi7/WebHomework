@@ -8,7 +8,7 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>top.year21</groupId>
+    <groupId>top.lihaoyu</groupId>
     <artifactId>computerstore</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>computerstore</name>
@@ -98,5 +98,5 @@
             </plugin>
         </plugins>
     </build>
-
+    <packaging>jar</packaging>
 </project>
